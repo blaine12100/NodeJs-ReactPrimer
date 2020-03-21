@@ -127,3 +127,5 @@
 
 // Retrieve all Notes
 // app.get('/notes', notes.findAll);
+
+// https://www.callicoder.com/node-js-express-mongodb-restful-crud-api-tutorial/
