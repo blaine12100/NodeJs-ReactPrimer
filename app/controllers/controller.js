@@ -31,14 +31,14 @@ exports.search = (req, res) => {
         delete request_data.king
         // console.log(request_data)
 
-        Note.find({ "$or": [{ "attacker_king": king_data }, { "defender_king": king_data }], "$and": [request_data] }).then(notes => {
+        Note.find({ "$or": [{ "attacker_king": king_data }, { "defender_king": king_data }], "$and": [request_data] }, { "_id": 0 }).then(notes => {
             // console.log(notes.length)
             res.send(notes)
         })
     }
 
     else {
-        Note.find({ "$and": [request_data] }).then(notes => {
+        Note.find({ "$and": [request_data] }, { "_id": 0 }).then(notes => {
             // console.log(notes)
             res.send(notes)
         })
