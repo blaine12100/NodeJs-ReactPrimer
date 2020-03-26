@@ -2,7 +2,7 @@
 
 import React from "react";
 import {
-    Route,
+    Route, Switch
 } from "react-router-dom";
 import Base from "./Base"
 import User from "./User"
@@ -19,8 +19,10 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <Route path="/" component={Base} />
-                <Route path="/battle" component={User} />
+                <Switch>
+                    <Route path="/" component={Base} />
+                    <Route path="/battle" component={User} />
+                </Switch>
             </div>
         );
     }
