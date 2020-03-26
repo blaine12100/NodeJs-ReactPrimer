@@ -22,7 +22,7 @@ class App extends React.Component {
       <div>
       <Switch>
       
-        <Route path="/" component={Base} />
+        <Route path="/" component={Base} exact={true} />
         <Route path="/battle" component={User} />
       
       </Switch>
