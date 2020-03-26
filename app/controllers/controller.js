@@ -20,7 +20,7 @@ exports.findRegion = (req, res) => {
 // Retrieve and return all battles from the database with a specific condition.
 exports.search = (req, res) => {
 
-    // console.log(req.query)
+    console.log(req.query)
 
     var request_data = req.query
 
@@ -39,7 +39,7 @@ exports.search = (req, res) => {
 
     else {
         Note.find({ "$and": [request_data] }, { "_id": 0 }).then(notes => {
-            // console.log(notes)
+            console.log(notes)
             res.send(notes)
         })
     }
