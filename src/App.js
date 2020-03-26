@@ -1,5 +1,5 @@
 // src/App.js
-
+import { BrowserRouter, Route, Switch, Link, NavLink } from "react-router-dom";
 import React from "react";
 import {
   Route,
@@ -18,10 +18,16 @@ class App extends React.Component {
 
   render() {
     return (
+      <BrowserRouter>
       <div>
+      <Switch>
+      
         <Route path="/" component={Base} />
         <Route path="/battle" component={User} />
+      
+      </Switch>
       </div>
+      </BrowserRouter>
     );
   }
 }
