@@ -1,7 +1,7 @@
 // src/App.js
 
 import React from "react";
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import API from "./API"
 import MaterialTable from "material-table";
 
@@ -23,7 +23,7 @@ class Base extends React.Component {
     componentDidMount() {
 
         API.get('/search').then(response => {
-            // console.log(response)
+            console.log(response)
 
             // for (var index = 0; index < response['data'].length; index++) {
             //   console.log(response['data'][index])
@@ -52,6 +52,15 @@ class Base extends React.Component {
 
     }
 
+    handle_route(data) {
+        return <Redirect
+            to={{
+                pathname: "/battle",
+                state: { battle_data: data }
+            }}
+        />
+    }
+
     render() {
         console.log(this.state.data)
         return (
@@ -63,6 +72,8 @@ class Base extends React.Component {
                             icon: 'save',
                             tooltip: 'Save User',
                             onClick: (event, rowData) => {
+                                console.log(event, rowData)
+                                this.handle_route(rowData)
                                 // Redirect to the User Component With the required props(The Name,clan,region of the battle etc)
                             }
                         }

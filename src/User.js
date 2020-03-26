@@ -8,6 +8,7 @@ import { Card } from "shards-react";
 
 class User extends React.Component {
     render() {
+        console.log(this.props)
         const { name, avatar, email, isLoading } = this.props;
 
         const userDetails = (
